@@ -7,13 +7,13 @@ import Menu from '../containers/Menu';
 import { Card } from 'semantic-ui-react';
 
 class App extends Component {
+
     componentWillMount(){
       const { setBooks } = this.props;
       axios.get('/books.json').then(({ data }) =>{
         setBooks(data);
       });
     }
-
 
     render() {
       const { books, isReady } = this.props;

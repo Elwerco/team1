@@ -1,8 +1,11 @@
 import React from 'react';
 import { Card, Icon, Image, Button } from 'semantic-ui-react';
+import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const BookCard = book => {
 	const { title, author, price, image, id, addToCart, addedCount } = book;
+
 	return (
 	<Card>
 	    <Image src={image} />
