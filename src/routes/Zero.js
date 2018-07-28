@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as booksList from './books';
 import { Icon, Container, Button, Item } from 'semantic-ui-react';
 import Menu from '../containers/Menu';
+import axios from 'axios';
 
 class Zero extends Component {
 
@@ -11,7 +12,8 @@ class Zero extends Component {
 
       const { match: { params } } = this.props;
       // Эта штука сверху берет айдишник. А в Zero найешь остальное(для себя)
-      const a = booksList.default[params.id];
+      // const a = axios.get('/books.json')
+      const a = booksList.default[params.id]
       const image = a.image;
       const title = a.title;
       const author = a.author;

@@ -5,17 +5,19 @@ import BookCard from '../containers/BookCard';
 import Filter from '../containers/Filter';
 import Menu from '../containers/Menu';
 import { Card } from 'semantic-ui-react';
+import * as FunForPost from '../actions/books'
 
 class App extends Component {
 
     componentWillMount(){
       const { setBooks } = this.props;
-      axios.get('/books.json').then(({ data }) =>{
+      axios.get('http://167.99.2.1/books.json').then(({ data }) =>{
         setBooks(data);
       });
+
     }
 
-    render() {
+    render() { 
       const { books, isReady } = this.props;
       return(
         <Container>
