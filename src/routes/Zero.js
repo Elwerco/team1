@@ -31,7 +31,7 @@ class Zero extends Component {
 
     }
 
-    render(state) {
+    render() {
       const { match: { params } } = this.props;
       // Эта штука сверху берет айдишник. А в Zero найешь остальное(для себя)
       // const a = axios.get('/books.json')
@@ -80,8 +80,4 @@ class Zero extends Component {
 }
 
 
-          const mapStateToProps = (state) => {
-          return alert(state);
-         };
-
-export default connect(mapStateToProps)(Zero);
+export default Zero;
