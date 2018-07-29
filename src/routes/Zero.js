@@ -3,11 +3,29 @@ import * as booksList from './books';
 import { Icon, Container, Button, Item } from 'semantic-ui-react';
 import Menu from '../containers/Menu';
 import axios from 'axios';
+import { Redirect } from 'react-router';
+
+
+
+
+
 
 class Zero extends Component {
 
-    componentWillMount(){
+    constructor(props) {
+        super(props);
+
+        this.state = {
+          isRedirect: false,
+        };
+        this.redirect = this.redirect.bind(this);
+      }
+        
+    redirect(){
+      this.setState({isRedirect: true});
     }
+
+
     render() {
 
       const { match: { params } } = this.props;
@@ -22,10 +40,16 @@ class Zero extends Component {
         first: {marginBottom: 10},
         second: {marginBottom: 10}
       }
+
+      if (this.state.isRedirect) {
+              return <Redirect to='/' />
+          } 
+
+
       return(
         <div>
           <Container>
-            <Menu />
+            <Menu></Menu>
             <Item.Group relaxed>
               <Item>
                 <Item.Image size='large' src={image} />
@@ -41,7 +65,7 @@ class Zero extends Component {
                      {price}
                    </a>
                    <Item.Description>
-                      <Button color='green'>Добавить в корзину</Button>
+                      <Button onClick={this.redirect} color='green'>Вернуться к добавлению</Button>
                    </Item.Description>
                 </Item.Content>
 
