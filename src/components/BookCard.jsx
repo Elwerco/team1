@@ -4,7 +4,7 @@ import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 
 const BookCard = book => {
-	const { title, author, price, image, id, addToCart, addedCount } = book;
+	const { title, author, price, image, id1, addToCart, addedCount } = book;
 
 
 
@@ -13,7 +13,7 @@ const BookCard = book => {
 	    <Image src={image} />
 	    <Card.Content>
 	      <Card.Header>
-	      	<a href={id}>{title}</a>
+	      	<a href={id1}>{title}</a>
 	      </Card.Header>
 	      <Card.Meta>
 	      	<span className='date'>

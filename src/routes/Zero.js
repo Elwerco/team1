@@ -6,12 +6,6 @@ import axios from 'axios';
 import { Redirect } from 'react-router';
 import  { connect } from 'react-redux';
 
-
-
-
-
-
-
 class Zero extends Component {
 
     constructor(props) {
@@ -32,10 +26,8 @@ class Zero extends Component {
     }
 
     render() {
-      const { match: { params } } = this.props;
-      // Эта штука сверху берет айдишник. А в Zero найешь остальное(для себя)
       // const a = axios.get('/books.json')
-      const a = booksList.default[params.id]
+      const a = booksList.default[0]
       const image = a.image;
       const title = a.title;
       const author = a.author;
