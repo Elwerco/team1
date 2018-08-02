@@ -22,9 +22,7 @@ ReactDOM.render(
 		<Router history={history}>
 			<div>
 				<Route exact path='/' component={App} />
-				<Route path='/:id1' component={Zero} />
-				<Route path='/1' component={Zero} />
-
+				<Route path='/:id' component={Zero} />
 			</div>
 		</Router>
 	</Provider>,

@@ -1,7 +1,6 @@
 export default [
   {
-    "id": 23,
-    "id1": 0,
+    "id": 0,
     "title": "Происхождение",
     "author": "Дэн Браун",
     "image":
